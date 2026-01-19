@@ -9,9 +9,6 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
-
-
 resource "azurerm_resource_group" "poornesh-rg" {
   name     = "poornesh-rg-us"
   location = "australiaeast"
@@ -103,8 +100,6 @@ os_disk {
 output "public_ip_address" {
     value = azurerm_public_ip.obaid-tfpip.ip_address
 }
-
-
 resource "azurerm_network_interface_security_group_association" "nsg_nic_assoc" {
       network_interface_id      = azurerm_network_interface.obaid-nic-tf.id
       network_security_group_id = azurerm_network_security_group.nsg-tf.id
