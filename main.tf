@@ -83,7 +83,11 @@ resource "azurerm_linux_virtual_machine" "poornesh-vm-tf" {
     #    username = "poornesh"
     #    public_key = file("/var/lib/jenkins/.ssh/id_rsa")
     # }
-    os_disk {
+admin_ssh_key {
+  username   = "poornesh"
+  public_key = file("/var/lib/jenkins/.ssh/id_rsa")
+}
+os_disk {
         caching = "ReadWrite"
         storage_account_type = "Standard_LRS"
     }
